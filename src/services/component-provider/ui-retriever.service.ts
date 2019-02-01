@@ -1,13 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { EndpointRetrieverService } from './endpoint-retriever.service';
+import { ComponentType } from 'src/enums/component-type.enum';
 
 @Injectable()
 export class UIRetrieverService {
   constructor(private endpointRetrieverService: EndpointRetrieverService) {}
 
-  retrieveByToken(token: string) {
+  retrieveByToken(token: string, componentType: ComponentType) {
     console.log(`loading UI for ${token}`);
-    var uiEndpoint = this.endpointRetrieverService.retrieveByToken(token);
+    console.log(componentType);
+    console.log(typeof componentType);
+    var uiEndpoint = this.endpointRetrieverService.retrieveByToken(
+      token,
+      componentType,
+    );
 
     if (uiEndpoint) {
       return `
@@ -31,7 +37,8 @@ export class UIRetrieverService {
                 <li>10 spices</li>     
                 <li>Ultimate enjoyment</li>         
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Get 🌮</button>
+              ${componentType === ComponentType.WebComponent &&
+                '<button type="button" class="btn btn-lg btn-block btn-primary">Get 🌮</button>'}              
             </div>
           </div>
 
@@ -46,7 +53,8 @@ export class UIRetrieverService {
                 <li>It'sa spicy boi</li>
                 <li>Stomach clenching</li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Get 🌮</button>
+              ${componentType === ComponentType.WebComponent &&
+                '<button type="button" class="btn btn-lg btn-block btn-primary">Get 🌮</button>'}              
             </div>
           </div>
 
@@ -61,7 +69,8 @@ export class UIRetrieverService {
                 <li>Extreme strength</li>
                 <li>Priority toilet support</li>
               </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">Get 🌮</button>
+              ${componentType === ComponentType.WebComponent &&
+                '<button type="button" class="btn btn-lg btn-block btn-primary">Get 🌮</button>'}              
             </div>
           </div>
 

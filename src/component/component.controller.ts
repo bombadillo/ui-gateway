@@ -6,14 +6,22 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { UIRetrieverService } from 'src/services/component-provider/ui-retriever.service';
+import { ComponentType } from 'src/enums/component-type.enum';
 
 @Controller('component')
 export class ComponentController {
   constructor(private uiRetrieverService: UIRetrieverService) {}
 
-  @Get('getComponent/:componentToken')
-  getComponent(@Param('componentToken') componentToken) {
-    var ui = this.uiRetrieverService.retrieveByToken(componentToken);
+  @Get('getComponent/:componentToken/:componentType')
+  getComponent(
+    @Param('componentToken') componentToken: string,
+    @Param('componentType') componentType: string,
+  ) {
+    var parsedComponentType: ComponentType = ComponentType[componentType];
+    var ui = this.uiRetrieverService.retrieveByToken(
+      componentToken,
+      parsedComponentType,
+    );
 
     if (ui) {
       return ui;
