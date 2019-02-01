@@ -1,10 +1,10 @@
-import { Controller, Post, Body, HttpCode } from '@nestjs/common';
-import { ComponentRequest } from 'src/models/component-request.model';
+import { Controller, Get, Param } from '@nestjs/common';
+import { ComponentRequest } from 'src/models/component/component-request.model';
 
 @Controller('component')
 export class ComponentController {
-  @Post('getComponent')
-  getComponent(@Body() componentRequest: ComponentRequest) {
-    return componentRequest;
+  @Get('getComponent/:componentToken')
+  getComponent(@Param('componentToken') componentToken) {
+    return componentToken;
   }
 }
