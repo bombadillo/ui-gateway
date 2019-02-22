@@ -7,7 +7,7 @@ export class EndpointRetrieverService {
     console.log(`loading endpoint for ${token}`);
 
     if (token === '2bca1032-4700-45db-975c-30dae65de7ae') {
-      return `http://localhost:3001/ui/${componentType}`;
+      return `http://localhost:5002`;
     }
 
     return null;
