@@ -32,3 +32,11 @@ A registry for UI components
   - Ideally has multiple formats
     - e.g. flat HTML, web component, JS bundle
 - Auth is limited to the gateway
+
+# Install
+
+- `yarn install`
+
+# Run
+
+- `yarn run`
