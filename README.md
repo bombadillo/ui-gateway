@@ -2,7 +2,7 @@
 
 A registry for UI components
 
-[diagram]: README_DIAGRAM.jpg
+![Diagram](/README_DIAGRAM.jpg)
 
 # Pros
 
