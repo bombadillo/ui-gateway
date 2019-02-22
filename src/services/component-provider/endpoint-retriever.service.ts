@@ -10,6 +10,18 @@ export class EndpointRetrieverService {
       return `http://localhost:5002`;
     }
 
+    if (token === 'f3aadb56-21cf-417a-99ce-2201b1fd855b') {
+      return 'http://localhost:5003';
+    }
+
+    if (token === '6aedd25d-4c73-49f3-ba86-fd9103a252ee') {
+      return 'http://localhost:5004';
+    }
+
+    if (token === 'ec9796c3-129c-4dc0-af5e-5f2170ca260d') {
+      return 'http://localhost:5005';
+    }
+
     return null;
   }
 }
