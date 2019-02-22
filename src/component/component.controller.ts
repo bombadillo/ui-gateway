@@ -17,6 +17,7 @@ export class ComponentController {
     @Param('componentToken') componentToken: string,
     @Param('componentType') componentType: string,
   ) {
+    console.log(`got token ${componentToken}`);
     var parsedComponentType: ComponentType = ComponentType[componentType];
     var ui = this.uiRetrieverService.retrieveByToken(
       componentToken,
