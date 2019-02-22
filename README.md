@@ -25,6 +25,19 @@ A registry for UI components
   - e.g. flat HTML, web component, JS bundle
 - Auth is limited to the gateway
 
+## Registration
+
+- Authorisation to UI components are agreed
+- Consumers have one to many relationship with provider UI components
+- Relationship could be stored as follows:
+
+| **ConsumerComponent** |
+| --------------------- |
+| ConsumerId            |
+| ProviderId            |
+| ProviderComponentId   |
+| Token                 |
+
 # Provider
 
 - Requires registration with gateway
@@ -33,6 +46,27 @@ A registry for UI components
     - e.g. flat HTML, web component, JS bundle
 - Auth is limited to the gateway
 
+## Registration
+
+- Basic details are stored
+
+| **Provider** |
+| ------------ |
+| Id           |
+| Name         |
+
+- A providers UI components are set:
+
+| **ProviderComponent** |
+| --------------------- |
+| Id                    |
+| ProviderId            |
+| Name                  |
+| URL                   |
+| ComponentType         |
+
+- ComponentType is flat HTML, web component, etc
+
 # Install
 
 - `yarn install`
@@ -40,3 +74,16 @@ A registry for UI components
 # Run
 
 - `yarn run`
+
+# Required apps
+
+## Providers
+
+- https://github.com/JasonHughes94/ui-provider-angular
+- https://github.com/JasonHughes94/ui-provider-web-component
+- https://github.com/bombadillo/ui-provider-react
+- https://github.com/bombadillo/ui-provider-html
+
+## Consumers
+
+- https://github.com/bombadillo/ui-client-dotnetcore
