@@ -77,6 +77,8 @@ A registry for UI components
 
 # Required apps
 
+These apps are required to demonstrate the consumer retrieving UI components from multiple providers
+
 ## Providers
 
 - https://github.com/JasonHughes94/ui-provider-angular
